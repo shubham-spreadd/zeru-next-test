@@ -10,7 +10,7 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
-export const Button = ({
+const Button = ({
   primary,
   size,
   backgroundColor,
@@ -48,3 +48,5 @@ Button.defaultProps = {
   backgroundColor: PropTypes.shape({}),
   label: PropTypes.bool,
 };
+
+export default Button;

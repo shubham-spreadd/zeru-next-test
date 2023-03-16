@@ -1,10 +1,10 @@
 import React from "react";
 import { StoryFn, Meta } from "@storybook/react";
 
-import { Button } from "./Button";
+import Button from "./Button";
 
 export default {
-  title: "Example/Button",
+  title: "Common/Button",
   component: Button,
   argTypes: {
     primary: { control: "boolean" },

@@ -1,11 +1,16 @@
 import type { StorybookConfig } from "@storybook/nextjs";
 
-const config: StorybookConfig = {
+type StorybookConfigExtended = StorybookConfig & {
+  features: { emotionAlias: Boolean };
+};
+
+const config: StorybookConfigExtended = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@chakra-ui/storybook-addon",
   ],
   framework: {
     name: "@storybook/nextjs",
@@ -23,6 +28,9 @@ const config: StorybookConfig = {
       propFilter: (prop) =>
         prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
     },
+  },
+  features: {
+    emotionAlias: true,
   },
 };
 
